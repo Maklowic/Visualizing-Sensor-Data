@@ -1,2 +1,2 @@
-# Visualizing-Sensor-Data
-Visualizing Sensor Data form robot connected to computer using Qt libraries and software.
+## Visualizing-Sensor-Data
+Visualizing sensor data of LF class robot named MILF (Mapp-Ing Line Follower) connected to a computer.

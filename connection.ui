@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>connection</class>
+ <widget class="QMainWindow" name="connection">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>879</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="1" column="1">
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="title">
+       <string>Info</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="textEditInfo"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButtonClearInfo">
+         <property name="text">
+          <string>Wyczyść info</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Połączenie</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButtonSearch">
+         <property name="text">
+          <string>Szukaj</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboBoxDevices"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButtonConnect">
+         <property name="text">
+          <string>Połącz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="pushButtonCloseConnection">
+         <property name="text">
+          <string>Rozłącz</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Log</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="textEditLogs"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButtonClearLog">
+         <property name="text">
+          <string>Wyczyść log</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonClearLog</sender>
+   <signal>clicked()</signal>
+   <receiver>textEditLogs</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonClearInfo</sender>
+   <signal>clicked()</signal>
+   <receiver>textEditInfo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>721</x>
+     <y>481</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

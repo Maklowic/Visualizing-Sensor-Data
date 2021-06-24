@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MILF sensors: Plik źródłowy connection.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MILF sensors
+   &#160;<span id="projectnumber">2.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('connection_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">connection.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="connection_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef CONNECTION_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define CONNECTION_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QSerialPort&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;QDebug&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QSerialPortInfo&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_c_r_c8_8h.html">CRC8.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mapped__path_8h.html">mapped_path.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wheel__speed1_8h.html">wheel_speed1.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sensor__state_8h.html">sensor_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespace_ui.html">   24</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span><a class="code" href="classconnection.html">connection</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classconnection.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classconnection.html">connection</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Q_OBJECT  </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classconnection.html#ac04a515fcc0007986a996702b0ef6dc6">connection</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classconnection.html#ac04a515fcc0007986a996702b0ef6dc6">connection</a>(<a class="code" href="classwheel__speed1.html">wheel_speed1</a> &amp;ws, <a class="code" href="classmapped__path.html">mapped_path</a> &amp;mp, <a class="code" href="classsensor__state.html">sensor_state</a> &amp;ss, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classconnection.html#a974638af9e9e1e5659dee7c9fab326ed">~connection</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#a8d6258b21854fe1685d4344606bcc3d0">manageData</a>(<span class="keywordtype">int</span> co, <span class="keywordtype">int</span> ktory, <span class="keywordtype">int</span> dane);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classconnection.html#a3a26ad6dffbd9a32a871c80ef4b36e07">connStatus</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#a8e9ca2bc6308871b8f54a6dc6984157c">on_pushButtonSearch_clicked</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#a7f45098075d32fc7eed64aac1c2a2c6f">on_pushButtonConnect_clicked</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#ae02095bc0dd79fd41f4d04c591e42b7a">on_pushButtonCloseConnection_clicked</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#a3a7545a2881da274109499f35800ccd3">readFromPort</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classconnection.html#a0500ec4e78ca7bcbd61b883925f7d9c3">   99</a></span>&#160;    Ui::connection *<a class="code" href="classconnection.html#a0500ec4e78ca7bcbd61b883925f7d9c3">ui</a>;  </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#a9d7bcdd6c199f10ad388395f67df492f">addToLogs</a>(QString message);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classconnection.html#aa1d06c8ee8e15217b1331ab1fe4f087d">addToInfo</a>(QString message);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classconnection.html#a17ba56a92d33e31a1ad0118719007693">  111</a></span>&#160;    QSerialPort *<a class="code" href="classconnection.html#a17ba56a92d33e31a1ad0118719007693">device</a>; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classconnection.html#a45a22484a4e3cd2536b85d9e123cd1d5">  113</a></span>&#160;    <a class="code" href="classwheel__speed1.html">wheel_speed1</a> *<a class="code" href="classconnection.html#a45a22484a4e3cd2536b85d9e123cd1d5">WheelSpeed</a>; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classconnection.html#a725d840eea299d008735575722591190">  114</a></span>&#160;    <a class="code" href="classmapped__path.html">mapped_path</a> *<a class="code" href="classconnection.html#a725d840eea299d008735575722591190">MappedPath</a>; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classconnection.html#af7f937111017ac2d92803a8a6fb85726">  115</a></span>&#160;    <a class="code" href="classsensor__state.html">sensor_state</a> *<a class="code" href="classconnection.html#af7f937111017ac2d92803a8a6fb85726">SensorState</a>; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CONNECTION_H</span></div>
+<div class="ttc" id="a_c_r_c8_8h_html"><div class="ttname"><a href="_c_r_c8_8h.html">CRC8.h</a></div><div class="ttdoc">Plik nagłówkowy dla CRC8.cpp.</div></div>
+<div class="ttc" id="aclassconnection_html"><div class="ttname"><a href="classconnection.html">connection</a></div><div class="ttdoc">Klasa connection.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00035">connection.h:36</a></div></div>
+<div class="ttc" id="aclassconnection_html_a0500ec4e78ca7bcbd61b883925f7d9c3"><div class="ttname"><a href="classconnection.html#a0500ec4e78ca7bcbd61b883925f7d9c3">connection::ui</a></div><div class="ttdeci">Ui::connection * ui</div><div class="ttdoc">Okno główne aplikacji.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00099">connection.h:99</a></div></div>
+<div class="ttc" id="aclassconnection_html_a17ba56a92d33e31a1ad0118719007693"><div class="ttname"><a href="classconnection.html#a17ba56a92d33e31a1ad0118719007693">connection::device</a></div><div class="ttdeci">QSerialPort * device</div><div class="ttdoc">Urządzenie, z którym odbywa się komunikacja poprzez otwarty port COM.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00111">connection.h:111</a></div></div>
+<div class="ttc" id="aclassconnection_html_a3a26ad6dffbd9a32a871c80ef4b36e07"><div class="ttname"><a href="classconnection.html#a3a26ad6dffbd9a32a871c80ef4b36e07">connection::connStatus</a></div><div class="ttdeci">bool connStatus()</div><div class="ttdoc">Sprawdza aktualny stan połączenia. Zwraca 1 jeżeli jest połączenie z urządzeniem komunikacyjnym....</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00145">connection.cpp:145</a></div></div>
+<div class="ttc" id="aclassconnection_html_a3a7545a2881da274109499f35800ccd3"><div class="ttname"><a href="classconnection.html#a3a7545a2881da274109499f35800ccd3">connection::readFromPort</a></div><div class="ttdeci">void readFromPort()</div><div class="ttdoc">Odczytuje dane przychodzące z mikrokontrolera poprzez komunikację UART.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00097">connection.cpp:97</a></div></div>
+<div class="ttc" id="aclassconnection_html_a45a22484a4e3cd2536b85d9e123cd1d5"><div class="ttname"><a href="classconnection.html#a45a22484a4e3cd2536b85d9e123cd1d5">connection::WheelSpeed</a></div><div class="ttdeci">wheel_speed1 * WheelSpeed</div><div class="ttdoc">Ramie do obiektu Wheel Speed.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00113">connection.h:113</a></div></div>
+<div class="ttc" id="aclassconnection_html_a725d840eea299d008735575722591190"><div class="ttname"><a href="classconnection.html#a725d840eea299d008735575722591190">connection::MappedPath</a></div><div class="ttdeci">mapped_path * MappedPath</div><div class="ttdoc">Ramie do obiektu Mapped Path.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00114">connection.h:114</a></div></div>
+<div class="ttc" id="aclassconnection_html_a7f45098075d32fc7eed64aac1c2a2c6f"><div class="ttname"><a href="classconnection.html#a7f45098075d32fc7eed64aac1c2a2c6f">connection::on_pushButtonConnect_clicked</a></div><div class="ttdeci">void on_pushButtonConnect_clicked()</div><div class="ttdoc">Slot dla przycisku &quot;Connect&quot;. Podłącza się do wybranego portu pokazanego w liście comboBox obok.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00054">connection.cpp:54</a></div></div>
+<div class="ttc" id="aclassconnection_html_a8d6258b21854fe1685d4344606bcc3d0"><div class="ttname"><a href="classconnection.html#a8d6258b21854fe1685d4344606bcc3d0">connection::manageData</a></div><div class="ttdeci">void manageData(int co, int ktory, int dane)</div><div class="ttdoc">Zarządza danymi wpływającymi przez otwarty port za pomocą ramek danych.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00123">connection.cpp:123</a></div></div>
+<div class="ttc" id="aclassconnection_html_a8e9ca2bc6308871b8f54a6dc6984157c"><div class="ttname"><a href="classconnection.html#a8e9ca2bc6308871b8f54a6dc6984157c">connection::on_pushButtonSearch_clicked</a></div><div class="ttdeci">void on_pushButtonSearch_clicked()</div><div class="ttdoc">Slot dla przycisku &quot;Search&quot;. Wyszukuje dostępne porty COM.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00031">connection.cpp:31</a></div></div>
+<div class="ttc" id="aclassconnection_html_a974638af9e9e1e5659dee7c9fab326ed"><div class="ttname"><a href="classconnection.html#a974638af9e9e1e5659dee7c9fab326ed">connection::~connection</a></div><div class="ttdeci">~connection()</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00026">connection.cpp:26</a></div></div>
+<div class="ttc" id="aclassconnection_html_a9d7bcdd6c199f10ad388395f67df492f"><div class="ttname"><a href="classconnection.html#a9d7bcdd6c199f10ad388395f67df492f">connection::addToLogs</a></div><div class="ttdeci">void addToLogs(QString message)</div><div class="ttdoc">Funkcja wysyła wiadomość do okna z logami.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00042">connection.cpp:42</a></div></div>
+<div class="ttc" id="aclassconnection_html_aa1d06c8ee8e15217b1331ab1fe4f087d"><div class="ttname"><a href="classconnection.html#aa1d06c8ee8e15217b1331ab1fe4f087d">connection::addToInfo</a></div><div class="ttdeci">void addToInfo(QString message)</div><div class="ttdoc">Funkcja wysyła wiadomość do okna z wiadomościami.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00048">connection.cpp:48</a></div></div>
+<div class="ttc" id="aclassconnection_html_ac04a515fcc0007986a996702b0ef6dc6"><div class="ttname"><a href="classconnection.html#ac04a515fcc0007986a996702b0ef6dc6">connection::connection</a></div><div class="ttdeci">connection(QWidget *parent=nullptr)</div><div class="ttdoc">&lt; Główny obiekt klasy</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00004">connection.cpp:4</a></div></div>
+<div class="ttc" id="aclassconnection_html_ae02095bc0dd79fd41f4d04c591e42b7a"><div class="ttname"><a href="classconnection.html#ae02095bc0dd79fd41f4d04c591e42b7a">connection::on_pushButtonCloseConnection_clicked</a></div><div class="ttdeci">void on_pushButtonCloseConnection_clicked()</div><div class="ttdoc">Slot dla przycisku &quot;Disconnect&quot;. Zamyka połączenie z otwartym portem.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00085">connection.cpp:85</a></div></div>
+<div class="ttc" id="aclassconnection_html_af7f937111017ac2d92803a8a6fb85726"><div class="ttname"><a href="classconnection.html#af7f937111017ac2d92803a8a6fb85726">connection::SensorState</a></div><div class="ttdeci">sensor_state * SensorState</div><div class="ttdoc">Ramie do obiektu Sensor State.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00115">connection.h:115</a></div></div>
+<div class="ttc" id="aclassmapped__path_html"><div class="ttname"><a href="classmapped__path.html">mapped_path</a></div><div class="ttdoc">Klasa mapped_path.</div><div class="ttdef"><b>Definition:</b> <a href="mapped__path_8h_source.html#l00038">mapped_path.h:39</a></div></div>
+<div class="ttc" id="aclasssensor__state_html"><div class="ttname"><a href="classsensor__state.html">sensor_state</a></div><div class="ttdoc">Klasa sensor_state.</div><div class="ttdef"><b>Definition:</b> <a href="sensor__state_8h_source.html#l00029">sensor_state.h:30</a></div></div>
+<div class="ttc" id="aclasswheel__speed1_html"><div class="ttname"><a href="classwheel__speed1.html">wheel_speed1</a></div><div class="ttdoc">Klasa wheel_speed1.</div><div class="ttdef"><b>Definition:</b> <a href="wheel__speed1_8h_source.html#l00040">wheel_speed1.h:41</a></div></div>
+<div class="ttc" id="amapped__path_8h_html"><div class="ttname"><a href="mapped__path_8h.html">mapped_path.h</a></div><div class="ttdoc">Plik nagłówkowy dla mapped_path.cpp.</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00024">connection.h:24</a></div></div>
+<div class="ttc" id="asensor__state_8h_html"><div class="ttname"><a href="sensor__state_8h.html">sensor_state.h</a></div><div class="ttdoc">Plik nagłówkowy dla sensor_state.cpp.</div></div>
+<div class="ttc" id="awheel__speed1_8h_html"><div class="ttname"><a href="wheel__speed1_8h.html">wheel_speed1.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="connection_8h.html">connection.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

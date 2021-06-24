@@ -1,0 +1,12 @@
+digraph "wheel_speed1::speedDisp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="wheel_speed1::speedDisp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Zaktualizowanie wyświetlonego wykresu słupkowego."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="wheel_speed1::updateSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classwheel__speed1.html#a82c9c3d165519b1bfad1d67606548f6c",tooltip="Zmiana wartości prędkości wybranego koła na zadaną wartość. Aktualizowanie wykresu."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MainWindow::on_pushButton\l_OpenWS_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#af0b10bc32193910f20c8fa157c217ae1",tooltip="Slot przycisku \"Wheel Speed\". Otwiera okno klasy Wheel Speed."];
+}

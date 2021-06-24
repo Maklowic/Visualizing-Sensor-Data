@@ -11,6 +11,15 @@
 
 #include <QMainWindow>
 #include <QSerialPort>
+#include "QDebug"
+#include <QList>
+#include <QSerialPortInfo>
+#include <QDateTime>
+#include "CRC8.h"
+#include "mapped_path.h"
+#include "wheel_speed1.h"
+#include "sensor_state.h"
+
 
 namespace Ui {
 class connection;
@@ -20,58 +29,90 @@ class connection;
  */
 
 /*!
- * \brief The Connection class
+ * \brief Klasa connection
  */
 
 class connection : public QMainWindow
 {
-    Q_OBJECT  //<! Main class object.
+    Q_OBJECT  //!< Główny obiekt klasy
 
 public:
-    /*! \brief Connection window class constructor
+    /*! \brief Konstruktor klasy Connection
     */
-    explicit connection(QWidget *parent = nullptr);
+    connection(QWidget *parent = nullptr);
+
+    /*!
+     * \brief Rozbudowany konstruktor klasy Connection.
+     * \param[in] ws -- Ramie do obiektu klasy Wheel Speed.
+     * \param[in] mp -- Ramie do obiektu klasy Mapped Path.
+     * \param[in] ss -- Ramie do obiektu klasy Mapped Path.
+     */
+    connection(wheel_speed1 &ws, mapped_path &mp, sensor_state &ss, QWidget *parent = nullptr);
+
     ~connection();
+
+
+    /*! \brief Zarządza danymi wpływającymi przez otwarty port za pomocą ramek danych.
+     *  \param[in] co -- bit ramki danych odpowiadający urządzeniu, na mikrokontrolerze, które wysyła dane.
+     *  Możliwe warianty to:
+     *     - 1 -- enkoder do wysyłania szybkości kół,
+     *     - 2 -- enkoder do wysyłania położenia robota,
+     *     - 3 -- sensory do wysyłania stanu czujników.
+     *  \param[in] ktory -- bit ramki odpowiadający numerowi krotności urządzenia.
+     *  np.
+     *     - 1 -- enkoder prawego koła,
+     *     - 2 -- enkoder lewego koła.
+     *  \param[in] dane -- bit/bity ramki odpowiadające przesłanym informacją z konkretnego urządzenia.
+    */
+    void manageData(int co, int ktory, int dane);
+
+    /*! \brief Sprawdza aktualny stan połączenia.
+     *  Zwraca 1 jeżeli jest połączenie z urządzeniem komunikacyjnym.
+     *  W przeciwnym razie zwraca 0.
+    */
+    bool connStatus();
 
 private slots:
 
-    /*! \brief Slot of "Search" button.
-    *  Searches for available COM ports.
+    /*! \brief Slot dla przycisku "Search".
+    *  Wyszukuje dostępne porty COM.
     */
     void on_pushButtonSearch_clicked();
 
-    /*! \brief Slot of "Connect" button.
-    *  Connects with the port being displayed in the comboBox nearby.
+    /*! \brief Slot dla przycisku "Connect".
+    *  Podłącza się do wybranego portu pokazanego w liście comboBox obok.
     */
     void on_pushButtonConnect_clicked();
 
-    /*! \brief Slot of "Disconnect" button.
-    *  Closes connection with robot.
+    /*! \brief Slot dla przycisku "Disconnect".
+    *  Zamyka połączenie z otwartym portem.
     */
     void on_pushButtonCloseConnection_clicked();
 
-    /*! \brief Reads send data from robot.
+    /*! \brief Odczytuje dane przychodzące z mikrokontrolera poprzez komunikację UART.
     */
     void readFromPort();
 
-private:
-    Ui::connection *ui;  //!< Application main window.
 
-    /** @brief Sends info to logs.
-    *  @param[in] message Message to be sent.
+
+private:
+    Ui::connection *ui;  //!< Okno główne aplikacji.
+
+    /** @brief Funkcja wysyła wiadomość do okna z logami.
+    *  @param[in] message -- Wiadomość do wysłania.
     */
     void addToLogs(QString message);
-    /** @brief Sends info to information.
-    *  @param[in] message Message to be sent.
+
+    /** @brief Funkcja wysyła wiadomość do okna z wiadomościami.
+    *  @param[in] message -- Wiadomość do wysłania.
     */
     void addToInfo(QString message);
 
-    QSerialPort *device; //!< The device with which the communication is set.
+    QSerialPort *device; //!< Urządzenie, z którym odbywa się komunikacja poprzez otwarty port COM.
 
-    /** @brief Sends message to robot.
-    *  @param[in] message Message to be sent.
-    */
-    void sendMessageToDevice(QString message);
+    wheel_speed1 *WheelSpeed; //!< Ramie do obiektu Wheel Speed
+    mapped_path *MappedPath; //!< Ramie do obiektu Mapped Path
+    sensor_state *SensorState; //!< Ramie do obiektu Sensor State
 };
 
 #endif // CONNECTION_H

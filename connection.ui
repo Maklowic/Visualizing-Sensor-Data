@@ -17,17 +17,38 @@
    <layout class="QGridLayout" name="gridLayout_5">
     <item row="1" column="1">
      <widget class="QGroupBox" name="groupBox_4">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="title">
        <string>Info</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QTextEdit" name="textEditInfo"/>
+        <widget class="QTextEdit" name="textEditInfo">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0d5ca6, stop: 1 #2198c0);
+color: white </string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="pushButtonClearInfo">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bbbbbb, stop: 1 #bbbbbb);
+color: black</string>
+         </property>
          <property name="text">
-          <string>Wyczyść info</string>
+          <string>Clear info</string>
          </property>
         </widget>
        </item>
@@ -36,31 +57,78 @@
     </item>
     <item row="0" column="0" colspan="2">
      <widget class="QGroupBox" name="groupBox">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="title">
-       <string>Połączenie</string>
+       <string>Connection</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <widget class="QPushButton" name="pushButtonSearch">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #000000, stop: 1 #000000);
+color: white</string>
+         </property>
          <property name="text">
-          <string>Szukaj</string>
+          <string>Search</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="comboBoxDevices"/>
+        <widget class="QComboBox" name="comboBoxDevices">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0d5ca6, stop: 1 #2198c0);
+color: white </string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="pushButtonConnect">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #000000, stop: 1 #000000);
+color: white</string>
+         </property>
          <property name="text">
-          <string>Połącz</string>
+          <string>Connect</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
         <widget class="QPushButton" name="pushButtonCloseConnection">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #000000, stop: 1 #000000);
+color: white</string>
+         </property>
          <property name="text">
-          <string>Rozłącz</string>
+          <string>Disconnect</string>
          </property>
         </widget>
        </item>
@@ -69,17 +137,46 @@
     </item>
     <item row="1" column="0">
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="title">
        <string>Log</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QTextEdit" name="textEditLogs"/>
+        <widget class="QTextEdit" name="textEditLogs">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0d5ca6, stop: 1 #2198c0);
+color: white </string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="pushButtonClearLog">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bbbbbb, stop: 1 #bbbbbb);
+color: black
+</string>
+         </property>
          <property name="text">
-          <string>Wyczyść log</string>
+          <string>Clear log</string>
          </property>
         </widget>
        </item>

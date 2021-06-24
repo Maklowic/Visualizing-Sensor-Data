@@ -1,16 +1,25 @@
 #include "connection.h"
 #include "ui_connection.h"
 
-#include <QDebug>
-#include <QList>
-#include <QSerialPortInfo>
-#include <QDateTime>
-
 connection::connection(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::connection)
 {
     ui->setupUi(this);
+    this->setStyleSheet("background-color: darkgray;");
+    this->device = new QSerialPort;
+}
+
+connection::connection(wheel_speed1 &ws, mapped_path &mp, sensor_state &ss, QWidget *parent) :
+    QMainWindow(parent), ui(new Ui::connection)
+{
+    // przechwytujemy ramiona z konstruktora
+    WheelSpeed = &ws;
+    MappedPath = &mp;
+    SensorState = &ss;
+
+    ui->setupUi(this);
+    this->setStyleSheet("background-color: darkgray;");
     this->device = new QSerialPort;
 }
 
@@ -71,8 +80,6 @@ void connection::on_pushButtonConnect_clicked()
       this->addToLogs("Port już jest otwarty!");
       return;
     }
-
-
 }
 
 void connection::on_pushButtonCloseConnection_clicked()
@@ -86,29 +93,55 @@ void connection::on_pushButtonCloseConnection_clicked()
     }
 }
 
+// Reading from open port.
 void connection::readFromPort() {
   while(this->device->canReadLine()) {
-    QString line = this->device->readLine();
-    //qDebug() << line;
+    QString msg = this->device->readAll();
 
-    QString terminator = "\r";
-    int pos = line.lastIndexOf(terminator);
-    //qDebug() << line.left(pos);
-    this->addToInfo(line.left(pos));
-    if(line.at(0) == "X"){
-        QString cos = line.at(2);
-        QString cos4 = line.at(4);
-        QString cos6 = line.at(6);
-        this->addToInfo("Typ: " + cos+", Sensor: " + cos4 + ", Wartosc: " + cos6);
+    int pos = msg.lastIndexOf("\r\n"); // returns \r\n position in string index
+    msg = msg.left(pos); // cuts all signs starting with \r\n
+
+    int co, ktory, dane;
+
+    if(ParseDataFrame(msg.toLocal8Bit().data(), co, ktory, dane))
+    {
+        this->addToLogs("Data frame |" + msg + "| parsing successful");
+        this->addToInfo("Urządzenie: " + QString::number(co) + " numer: " + QString::number(ktory) + " dane: " + QString::number(dane));
+
+//      view->updateScreen(sensor, status);
+//        SensorState->updateSensor(ktory, dane);
+        manageData(co, ktory, dane);
+
+    }
+    else
+    {
+        this->addToLogs("DATA FRAME |" + msg + "| PARSING FAILED");
     }
   }
 }
 
-void connection::sendMessageToDevice(QString message) {
-  if(this->device->isOpen() && this->device->isWritable()) {
-    this->addToLogs("Wysyłam informacje do urządzenia " + message);
-    this->device->write(message.toStdString().c_str());
-  } else {
-    this->addToLogs("Nie mogę wysłać wiadomości. Port nie jest otwarty!");
-  }
+void connection::manageData(int co, int ktory, int dane){
+
+    QPointF nowe(ktory, dane);
+    switch (co) {
+    // enkoder szybkość
+    case 1:
+        WheelSpeed->updateSpeed(ktory, dane);
+        break;
+    // enkoder położenie
+    case 2:
+        MappedPath->updatePosition(nowe);
+        break;
+    // sensor
+    case 3:
+        SensorState->updateSensor(ktory,dane);
+        break;
+    default:
+         qDebug() << "manageData ERROR: Wrong input!";
+        break;
+    }
+}
+
+bool connection::connStatus(){
+    return this->device->isOpen();
 }

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MILF sensors: Plik źródłowy mainwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MILF sensors
+   &#160;<span id="projectnumber">2.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mainwindow_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mainwindow.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mainwindow_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include&lt;QtCharts&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QtCharts/QChartView&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include&lt;QChartView&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include&lt;QBarSet&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include&lt;QBarSeries&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mapped__path_8h.html">mapped_path.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wheel__speed1_8h.html">wheel_speed1.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="connection_8h.html">connection.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sensor__state_8h.html">sensor_state.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;QT_BEGIN_NAMESPACE</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> { <span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a>; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;QT_END_NAMESPACE</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_main_window.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Q_OBJECT </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(<a class="code" href="classwheel__speed1.html">wheel_speed1</a> &amp;ws, <a class="code" href="classmapped__path.html">mapped_path</a> &amp;mp, <a class="code" href="classsensor__state.html">sensor_state</a> &amp;ss, <a class="code" href="classconnection.html">connection</a> &amp;c, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af0a8a3f54a87bd7ad6f23248dd0e9c09">createStatusBar</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af0b10bc32193910f20c8fa157c217ae1">on_pushButton_OpenWS_clicked</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aaf6ec9124ecb245bd5ef76501a84a396">on_pushButton_OpenC_clicked</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a90497d8a9e41b73387849ad5ba62fdb9">on_pushButton_OpenMP_clicked</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ad2c82baac2f747a4e01050b243ee8020">on_pushButton_OpenSS_clicked</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a45202e0f22e057c00584cf79c4dbbb70">on_pushButton_Exit_clicked</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_main_window.html#a7e993e7b0d8c1a9b0d10f89d8e71e258">   85</a></span>&#160;    <a class="code" href="classmapped__path.html">mapped_path</a> *<a class="code" href="class_main_window.html#a7e993e7b0d8c1a9b0d10f89d8e71e258">Window_MP</a>; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_main_window.html#ae3871d32867e3808595cb8d6cf11edb2">   87</a></span>&#160;    <a class="code" href="classconnection.html">connection</a> *<a class="code" href="class_main_window.html#ae3871d32867e3808595cb8d6cf11edb2">Window_C</a>; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_main_window.html#a28775948c7c7f35d9d6572abca75f0cb">   89</a></span>&#160;    <a class="code" href="classsensor__state.html">sensor_state</a> *<a class="code" href="class_main_window.html#a28775948c7c7f35d9d6572abca75f0cb">Window_SS</a>; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_main_window.html#abed141ddf070eafb1c4294856de25f9b">   91</a></span>&#160;    <a class="code" href="classwheel__speed1.html">wheel_speed1</a> *<a class="code" href="class_main_window.html#abed141ddf070eafb1c4294856de25f9b">Window_WS</a>; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">   93</a></span>&#160;    Ui::MainWindow *<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Klasa MainWindow.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00034">mainwindow.h:35</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a28775948c7c7f35d9d6572abca75f0cb"><div class="ttname"><a href="class_main_window.html#a28775948c7c7f35d9d6572abca75f0cb">MainWindow::Window_SS</a></div><div class="ttdeci">sensor_state * Window_SS</div><div class="ttdoc">Okno klasy Sensor State.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00089">mainwindow.h:89</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="class_main_window.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdoc">Okno główne aplikacji.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00093">mainwindow.h:93</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a45202e0f22e057c00584cf79c4dbbb70"><div class="ttname"><a href="class_main_window.html#a45202e0f22e057c00584cf79c4dbbb70">MainWindow::on_pushButton_Exit_clicked</a></div><div class="ttdeci">void on_pushButton_Exit_clicked()</div><div class="ttdoc">Slot przycisku &quot;Exit&quot;. Zamyka aplikację i wszystkie otwarte okna.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00089">mainwindow.cpp:89</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7e993e7b0d8c1a9b0d10f89d8e71e258"><div class="ttname"><a href="class_main_window.html#a7e993e7b0d8c1a9b0d10f89d8e71e258">MainWindow::Window_MP</a></div><div class="ttdeci">mapped_path * Window_MP</div><div class="ttdoc">Okno klasy Mapped Path.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00085">mainwindow.h:85</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a90497d8a9e41b73387849ad5ba62fdb9"><div class="ttname"><a href="class_main_window.html#a90497d8a9e41b73387849ad5ba62fdb9">MainWindow::on_pushButton_OpenMP_clicked</a></div><div class="ttdeci">void on_pushButton_OpenMP_clicked()</div><div class="ttdoc">Slot przycisku &quot;Mapped Path&quot;. Otwiera okno klasy Mapped Path.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00073">mainwindow.cpp:73</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdoc">&lt; Główny obiekt klasy</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00005">mainwindow.cpp:5</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aaf6ec9124ecb245bd5ef76501a84a396"><div class="ttname"><a href="class_main_window.html#aaf6ec9124ecb245bd5ef76501a84a396">MainWindow::on_pushButton_OpenC_clicked</a></div><div class="ttdeci">void on_pushButton_OpenC_clicked()</div><div class="ttdoc">Slot przycisku &quot;Conection&quot;. Otwiera okno klasy Connection.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00068">mainwindow.cpp:68</a></div></div>
+<div class="ttc" id="aclass_main_window_html_abed141ddf070eafb1c4294856de25f9b"><div class="ttname"><a href="class_main_window.html#abed141ddf070eafb1c4294856de25f9b">MainWindow::Window_WS</a></div><div class="ttdeci">wheel_speed1 * Window_WS</div><div class="ttdoc">Okno klasy Wheel Speed.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00091">mainwindow.h:91</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ad2c82baac2f747a4e01050b243ee8020"><div class="ttname"><a href="class_main_window.html#ad2c82baac2f747a4e01050b243ee8020">MainWindow::on_pushButton_OpenSS_clicked</a></div><div class="ttdeci">void on_pushButton_OpenSS_clicked()</div><div class="ttdoc">Slot przycisku &quot;Sensor State&quot;. Otwiera okno klasy Sensor State.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00078">mainwindow.cpp:78</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae3871d32867e3808595cb8d6cf11edb2"><div class="ttname"><a href="class_main_window.html#ae3871d32867e3808595cb8d6cf11edb2">MainWindow::Window_C</a></div><div class="ttdeci">connection * Window_C</div><div class="ttdoc">Okno klasy Connection.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8h_source.html#l00087">mainwindow.h:87</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00052">mainwindow.cpp:52</a></div></div>
+<div class="ttc" id="aclass_main_window_html_af0a8a3f54a87bd7ad6f23248dd0e9c09"><div class="ttname"><a href="class_main_window.html#af0a8a3f54a87bd7ad6f23248dd0e9c09">MainWindow::createStatusBar</a></div><div class="ttdeci">void createStatusBar()</div><div class="ttdoc">Tworzy pasek statusu.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00097">mainwindow.cpp:97</a></div></div>
+<div class="ttc" id="aclass_main_window_html_af0b10bc32193910f20c8fa157c217ae1"><div class="ttname"><a href="class_main_window.html#af0b10bc32193910f20c8fa157c217ae1">MainWindow::on_pushButton_OpenWS_clicked</a></div><div class="ttdeci">void on_pushButton_OpenWS_clicked()</div><div class="ttdoc">Slot przycisku &quot;Wheel Speed&quot;. Otwiera okno klasy Wheel Speed.</div><div class="ttdef"><b>Definition:</b> <a href="mainwindow_8cpp_source.html#l00058">mainwindow.cpp:58</a></div></div>
+<div class="ttc" id="aclassconnection_html"><div class="ttname"><a href="classconnection.html">connection</a></div><div class="ttdoc">Klasa connection.</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00035">connection.h:36</a></div></div>
+<div class="ttc" id="aclassmapped__path_html"><div class="ttname"><a href="classmapped__path.html">mapped_path</a></div><div class="ttdoc">Klasa mapped_path.</div><div class="ttdef"><b>Definition:</b> <a href="mapped__path_8h_source.html#l00038">mapped_path.h:39</a></div></div>
+<div class="ttc" id="aclasssensor__state_html"><div class="ttname"><a href="classsensor__state.html">sensor_state</a></div><div class="ttdoc">Klasa sensor_state.</div><div class="ttdef"><b>Definition:</b> <a href="sensor__state_8h_source.html#l00029">sensor_state.h:30</a></div></div>
+<div class="ttc" id="aclasswheel__speed1_html"><div class="ttname"><a href="classwheel__speed1.html">wheel_speed1</a></div><div class="ttdoc">Klasa wheel_speed1.</div><div class="ttdef"><b>Definition:</b> <a href="wheel__speed1_8h_source.html#l00040">wheel_speed1.h:41</a></div></div>
+<div class="ttc" id="aconnection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div><div class="ttdoc">Plik nagłówkowy dla connection.cpp.</div></div>
+<div class="ttc" id="amapped__path_8h_html"><div class="ttname"><a href="mapped__path_8h.html">mapped_path.h</a></div><div class="ttdoc">Plik nagłówkowy dla mapped_path.cpp.</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00024">connection.h:24</a></div></div>
+<div class="ttc" id="asensor__state_8h_html"><div class="ttname"><a href="sensor__state_8h.html">sensor_state.h</a></div><div class="ttdoc">Plik nagłówkowy dla sensor_state.cpp.</div></div>
+<div class="ttc" id="awheel__speed1_8h_html"><div class="ttname"><a href="wheel__speed1_8h.html">wheel_speed1.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="mainwindow_8h.html">mainwindow.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
